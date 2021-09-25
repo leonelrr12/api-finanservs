@@ -1,18 +1,20 @@
 require('dotenv').config()
 const mysql = require('mysql2')
 
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 4001
 const HOST = process.env.HOST
 const AWS_Access_key_ID = process.env.AWS_Access_key_ID
 const AWS_Secret_access_key = process.env.AWS_Secret_access_key
 
 // MySql DIgital Ocean
 const cnn = mysql.createConnection({
-    host: process.env.DB_HOST,
-    database: process.env.DATABASE,
-    user: process.env.DB_USER,
-    password: process.env.DB_PWD
+  host: process.env.DB_HOST,
+  database: process.env.DATABASE,
+  user: process.env.DB_USER,
+  password: process.env.DB_PWD,
+  port: process.env.PORTDB
 })
+
 
 // // MySql de James - IS
 // const cnn = mysql.createConnection({
